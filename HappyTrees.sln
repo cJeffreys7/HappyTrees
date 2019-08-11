@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrees", "HappyTrees\HappyTrees.csproj", "{79E33EB3-D4CD-49C9-9F42-AF2C06A27EA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E33EB3-D4CD-49C9-9F42-AF2C06A27EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E33EB3-D4CD-49C9-9F42-AF2C06A27EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E33EB3-D4CD-49C9-9F42-AF2C06A27EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E33EB3-D4CD-49C9-9F42-AF2C06A27EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35E508B5-08B3-4F72-8A99-128A58C45BF8}
+	EndGlobalSection
+EndGlobal
