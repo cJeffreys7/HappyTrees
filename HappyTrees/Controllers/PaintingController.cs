@@ -16,9 +16,9 @@ namespace HappyTrees.Controllers
         public ActionResult AllPaintings()
         {
             
-            Painting painting1 = new Painting { Title = "Painting 1", Season = 1, Episode = 1 };
-            Painting painting2 = new Painting { Title = "Painting 2", Season = 1, Episode = 2 };
-            Painting painting3 = new Painting { Title = "Painting 3", Season = 1, Episode = 3 };
+            Painting painting1 = new Painting { Title = "A Walk in the Woods", Season = 1, Episode = 1, Description = "The very first episode of 'The Joy of Painting' with Bob Ross.", ThumbnailFile = "~/css/Thumbnails/S01E01.png" };
+            Painting painting2 = new Painting { Title = "Mt. McKinley", Season = 1, Episode = 2, Description = "", ThumbnailFile = "~/css/Thumbnails/S01E02.png" };
+            Painting painting3 = new Painting { Title = "Ebony Sunset", Season = 1, Episode = 3, Description = "", ThumbnailFile = "~/css/Thumbnails/S01E03.png" };
             List<Painting> testPaintings = new List<Painting> { painting1, painting2, painting3 };
             return View(testPaintings);
         }

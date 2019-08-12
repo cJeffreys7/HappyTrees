@@ -4,11 +4,20 @@
     ViewData["Title"] = "AllPaintings";
 }
 
-<h1>AllPaintings</h1>
+<style>
+    h1 {
+        font-size : 96px;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+    h2 {
+        font-size : 48px;
+    }
+
+</style>
+
+<h1>All Paintings</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -21,25 +30,25 @@
             <th>
                 @Html.DisplayNameFor(model => model.Episode)
             </th>
-            <th></th>
+            <th>
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    <br>
+                    <img src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
+                </h2>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Season)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Episode)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
