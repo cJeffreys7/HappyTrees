@@ -17,6 +17,8 @@ namespace HappyTrees.Models
         public string ThumbnailFile { get; set; }
 
         public string Description { get; set; }
+
+        public string VideoURL { get; set; }
     }
 
 }

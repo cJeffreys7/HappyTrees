@@ -40,12 +40,17 @@
 <div class="painting-grid">
     @foreach (var item in Model)
     {
+        // Format season and episode ID, set paintingName
         string paintingID = "S" + item.Season + "E" + item.Episode;
         string paintingName = item.Title;
 
             <div class="painting-preview">
                 <div>
-                    <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
+                        @* Create an a tag from current item image to open PaintingDetails view
+                           Passes current item as Painting parameter to new view*@
+                        <a href="@Url.Action("PaintingDetails", "Painting", item)">
+                            <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
+                        </a>
                 </div>
                 <div class="painting-ID">
                     @paintingID
@@ -58,39 +63,5 @@
 </div>
 
 
-@*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Season)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Episode)
-            </th>
-            <th>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <h2>
-                    @Html.DisplayFor(modelItem => item.Title)
-                    <br>
-                    <img src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
-                </h2>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Season)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Episode)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>*@
+
+
