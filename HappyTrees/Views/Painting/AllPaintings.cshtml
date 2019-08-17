@@ -6,19 +6,59 @@
 
 <style>
     h1 {
-        font-size : 96px;
-    }
-
-
-    h2 {
         font-size : 48px;
     }
 
+    .painting-grid {
+        display: grid;
+        grid-template-columns: 256px 256px 256px 256px;
+        grid-template-rows: repeat(auto-fill minmax(256px, 320px));
+        grid-gap: 16px;
+    }
+
+    .painting-preview{
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+
+    .painting-thumbnail{
+        width: 256px;
+    }
+
+    .painting-ID{
+        font-size: 14px;
+    }
+
+    .painting-name{
+        font-size: 14px;
+        font-weight: 500;
+    }
 </style>
 
 <h1>All Paintings</h1>
 
-<table class="table">
+<div class="painting-grid">
+    @foreach (var item in Model)
+    {
+        string paintingID = "S" + item.Season + "E" + item.Episode;
+        string paintingName = item.Title;
+
+            <div class="painting-preview">
+                <div>
+                    <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
+                </div>
+                <div class="painting-ID">
+                    @paintingID
+                </div>
+                <div class="painting-name">
+                    @paintingName
+                </div>
+            </div>
+    }
+</div>
+
+
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -53,4 +93,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
