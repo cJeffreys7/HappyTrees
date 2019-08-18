@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace HappyTrees.Models
 {
@@ -13,7 +14,11 @@ namespace HappyTrees.Models
 
         public int Episode { get; set; }
 
+        public string ThumbnailFile { get; set; }
 
+        public string Description { get; set; }
 
+        public string VideoURL { get; set; }
     }
+
 }

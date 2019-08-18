@@ -4,44 +4,64 @@
     ViewData["Title"] = "AllPaintings";
 }
 
-<h1>AllPaintings</h1>
+<style>
+    h1 {
+        font-size : 48px;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Season)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Episode)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Season)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Episode)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    .painting-grid {
+        display: grid;
+        grid-template-columns: 256px 256px 256px 256px;
+        grid-template-rows: repeat(auto-fill minmax(256px, 320px));
+        grid-gap: 16px;
+    }
+
+    .painting-preview{
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+
+    .painting-thumbnail{
+        width: 256px;
+    }
+
+    .painting-ID{
+        font-size: 14px;
+    }
+
+    .painting-name{
+        font-size: 14px;
+        font-weight: 500;
+    }
+</style>
+
+<h1>All Paintings</h1>
+
+<div class="painting-grid">
+    @foreach (var item in Model)
+    {
+        // Format season and episode ID, set paintingName
+        string paintingID = "S" + item.Season + "E" + item.Episode;
+        string paintingName = item.Title;
+
+            <div class="painting-preview">
+                <div>
+                        @* Create an a tag from current item image to open PaintingDetails view
+                           Passes current item as Painting parameter to new view*@
+                        <a href="@Url.Action("PaintingDetails", "Painting", item)">
+                            <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
+                        </a>
+                </div>
+                <div class="painting-ID">
+                    @paintingID
+                </div>
+                <div class="painting-name">
+                    @paintingName
+                </div>
+            </div>
+    }
+</div>
+
+
+
+

@@ -1,0 +1,95 @@
+﻿@model HappyTrees.Models.Painting
+
+@{
+    ViewData["Title"] = "PaintingDetails";
+}
+
+<style>
+    h1 {
+        font-size: 14px;
+    }
+    
+    h2 {
+        font-size: 48px;
+    }
+
+    .painting-details{
+        display: grid;
+        grid-template-columns: 512px 480px;
+    }
+
+    .painting-details-content{
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+</style>
+
+@{ 
+    // Create paintingID tag
+    string paintingID = "S" + Model.Season + "E" + Model.Episode;
+}
+
+<h1>'The Joy of Painting' @paintingID</h1>
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div class="painting-details">
+    <img class="painting-image" src="@Url.Content(Model.ThumbnailFile)" alt="Painting Image" />
+        <div class="painting-details-content">
+            <div>
+                @Html.DisplayFor(model => model.Description)
+            </div>
+            @*Change to painting colors dropdown list*@
+            <div>
+                @Html.DisplayFor(model => model.Description)
+            </div>
+            @*Retrieves the VideoURL property and calls the url for the embeded youtube player*@
+            <div>
+                <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+</div>
+
+@*<div>
+    <h4>Painting</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Season)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Season)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Episode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Episode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThumbnailFile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThumbnailFile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+    *@
+
+
+
+<div>
+    <a asp-controller="Painting" asp-action="AllPaintings">Back to List</a>
+</div>
