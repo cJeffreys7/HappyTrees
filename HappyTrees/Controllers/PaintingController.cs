@@ -19,7 +19,8 @@ namespace HappyTrees.Controllers
             Painting painting1 = new Painting { Title = "A Walk in the Woods", Season = 1, Episode = 1,
                 Description = "The very first episode of 'The Joy of Painting' with Bob Ross.",
                 ThumbnailFile = "~/css/Thumbnails/S01E01.png",
-                VideoURL = "https://www.youtube.com/embed/oh5p5f5_-7A"
+                VideoURL = "https://www.youtube.com/embed/oh5p5f5_-7A",
+                Colors = {}
             };
             Painting painting2 = new Painting { Title = "Mt. McKinley", Season = 1, Episode = 2,
                 Description = "", ThumbnailFile = "~/css/Thumbnails/S01E02.png",
