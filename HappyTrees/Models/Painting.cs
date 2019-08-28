@@ -20,7 +20,7 @@ namespace HappyTrees.Models
 
         public string VideoURL { get; set; }
 
-        public Color [] Colors { get; set; }
+        public List<Color> Colors { get; set; }
     }
 
 }

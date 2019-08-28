@@ -39,16 +39,17 @@
 
 <div class="painting-grid">
     @foreach (var item in Model)
-    {
-        // Format season and episode ID, set paintingName
-        string paintingID = "S" + item.Season + "E" + item.Episode;
-        string paintingName = item.Title;
+        {
+            // Format season and episode ID, set paintingName
+            string paintingID = "S" + item.Season + "E" + item.Episode;
+            string paintingName = item.Title;
+            string paintingNameClean = paintingName.Replace(" ", "-");
 
             <div class="painting-preview">
                 <div>
                         @* Create an a tag from current item image to open PaintingDetails view
                            Passes current item as Painting parameter to new view*@
-                        <a href="@Url.Action("PaintingDetails", "Painting", item)">
+                        <a href="@Url.Action("PaintingDetails", "Painting", new { title = paintingNameClean})">
                             <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
                         </a>
                 </div>

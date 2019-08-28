@@ -40,9 +40,18 @@
                 @Html.DisplayFor(model => model.Description)
             </div>
             @*Change to painting colors dropdown list*@
-            <div>
-                @Html.DisplayFor(model => model.Description)
-            </div>
+        <div>
+            @if (Model.Colors != null)
+            {
+                foreach (var color in Model.Colors)
+                {
+                    <div>
+                        @color.ColorName
+                    </div>
+                }
+            }
+
+        </div>
             @*Retrieves the VideoURL property and calls the url for the embeded youtube player*@
             <div>
                 <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
