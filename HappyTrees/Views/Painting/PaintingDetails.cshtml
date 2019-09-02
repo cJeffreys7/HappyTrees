@@ -22,6 +22,16 @@
         display: grid;
         grid-template-rows: auto auto auto;
     }
+
+    #Color-Button{
+        display: flex;
+        width: 300px;
+        height: 48px;
+    }
+
+    #Colors-Background{
+        width: 300px;
+    }
 </style>
 
 @{ 
@@ -35,69 +45,35 @@
 
 <div class="painting-details">
     <img class="painting-image" src="@Url.Content(Model.ThumbnailFile)" alt="Painting Image" />
-        <div class="painting-details-content">
-            <div>
-                @Html.DisplayFor(model => model.Description)
-            </div>
-            @*Change to painting colors dropdown list*@
+    <div class="painting-details-content">
         <div>
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        @*TO DO: Start "Dropdown list" as collapsed*@
+
+        <button id="Color-Button" data-toggle="collapse" data-target="#Colors-Background">
+            @Model.Colors.Count Colors
+        </button>
+        <div class="card card-body bg-light" id="Colors-Background">
             @if (Model.Colors != null)
             {
                 foreach (var color in Model.Colors)
                 {
-                    <div>
-                        @color.ColorName
+                    <div id="Painting-Color">
+                        <a href="@color.BuyLink" target="_blank">
+                            @color.ColorName
+                        </a>
                     </div>
                 }
             }
 
         </div>
-            @*Retrieves the VideoURL property and calls the url for the embeded youtube player*@
-            <div>
-                <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
-            </div>
+        @*Retrieves the VideoURL property and calls the url for the embeded youtube player*@
+        <div>
+            <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
         </div>
+    </div>
 </div>
-
-@*<div>
-    <h4>Painting</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Season)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Episode)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Episode)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ThumbnailFile)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ThumbnailFile)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-</div>
-    *@
-
-
 
 <div>
     <a asp-controller="Painting" asp-action="AllPaintings">Back to List</a>
