@@ -19,7 +19,7 @@ namespace HappyTrees.Controllers
             {
                 Title = "A Walk in the Woods", Season = 1, Episode = 1,
                 Description = "The very first episode of 'The Joy of Painting' with Bob Ross.",
-                ThumbnailFile = "~/css/Thumbnails/S01E01.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E01.png",
                 VideoURL = "https://www.youtube.com/embed/oh5p5f5_-7A",
                 Colors = new List<Color>
                     {
@@ -34,7 +34,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 2,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E02.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E02.png",
                 VideoURL = "https://www.youtube.com/embed/RInDWhYceLU",
                 Colors = new List<Color>
                     {
@@ -48,7 +48,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 3,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E03.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E03.png",
                 VideoURL = "https://www.youtube.com/embed/UOziR7PoVco",
                 Colors = new List<Color>
                     {
@@ -63,7 +63,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 4,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E04.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E04.png",
                 VideoURL = "https://www.youtube.com/embed/0pwoixRikn4",
                 Colors = new List<Color>
                     {
@@ -76,7 +76,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 5,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E05.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E05.png",
                 VideoURL = "https://www.youtube.com/embed/DFSIQNjKRfk",
                 Colors = new List<Color>
                     {
@@ -90,7 +90,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 6,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E06.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E06.png",
                 VideoURL = "https://www.youtube.com/embed/loAzRUzx1wI",
                 Colors = new List<Color>
                     {
@@ -103,7 +103,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 7,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E07.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E07.png",
                 VideoURL = "https://www.youtube.com/embed/sDdpc8uisD0",
                 Colors = new List<Color>
                     {
@@ -117,7 +117,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 8,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E08.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E08.png",
                 VideoURL = "https://www.youtube.com/embed/kQlFwTOkYzg",
                 Colors = new List<Color>
                     {
@@ -131,7 +131,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 9,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E09.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E09.png",
                 VideoURL = "https://www.youtube.com/embed/QxcS7p1VHyQ",
                 Colors = new List<Color>
                     {
@@ -145,7 +145,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 10,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E10.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E10.png",
                 VideoURL = "https://www.youtube.com/embed/wDnLlywAL5I",
                 Colors = new List<Color>
                     {
@@ -159,7 +159,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 11,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E11.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E11.png",
                 VideoURL = "https://www.youtube.com/embed/Q03YvknOVe0",
                 Colors = new List<Color>
                     {
@@ -173,7 +173,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 12,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E12.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E12.png",
                 VideoURL = "https://www.youtube.com/embed/4E35-8x_y04",
                 Colors = new List<Color>
                     {
@@ -186,7 +186,7 @@ namespace HappyTrees.Controllers
                 Season = 1,
                 Episode = 13,
                 Description = "",
-                ThumbnailFile = "~/css/Thumbnails/S01E13.png",
+                ThumbnailFile = "~/Images/Thumbnails/S01E13.png",
                 VideoURL = "https://www.youtube.com/embed/IEQWfszfRlA",
                 Colors = new List<Color>
                     {
