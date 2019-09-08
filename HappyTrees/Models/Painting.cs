@@ -19,6 +19,8 @@ namespace HappyTrees.Models
         public string Description { get; set; }
 
         public string VideoURL { get; set; }
+
+        public List<Color> Colors { get; set; }
     }
 
 }

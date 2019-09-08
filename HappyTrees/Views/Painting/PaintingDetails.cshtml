@@ -22,6 +22,16 @@
         display: grid;
         grid-template-rows: auto auto auto;
     }
+
+    #Color-Button{
+        display: flex;
+        width: 300px;
+        height: 48px;
+    }
+
+    #Colors-Background{
+        width: 300px;
+    }
 </style>
 
 @{ 
@@ -35,60 +45,45 @@
 
 <div class="painting-details">
     <img class="painting-image" src="@Url.Content(Model.ThumbnailFile)" alt="Painting Image" />
-        <div class="painting-details-content">
-            <div>
-                @Html.DisplayFor(model => model.Description)
-            </div>
-            @*Change to painting colors dropdown list*@
-            <div>
-                @Html.DisplayFor(model => model.Description)
-            </div>
-            @*Retrieves the VideoURL property and calls the url for the embeded youtube player*@
-            <div>
-                <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
+    <div class="painting-details-content">
+        <div>
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        @*Dropdown list toggled (collapsed) on button press*@
+
+        <button id="Color-Button" data-toggle="collapse" data-target="#Colors-Background">
+            @Model.Colors.Count Colors
+        </button>
+        <div class="collapse" id="Colors-Background">
+            <div class="card card-body bg-light" id="Colors-Card">
+                @if (Model.Colors != null)
+                {
+                    foreach (var color in Model.Colors)
+                    {
+                        <div id="Painting-Color">
+                            <a href="@color.BuyLink" style="color: black" target="_blank">
+                                @*Changes color of SVG to hex code of color*@
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" 
+                                     style="height: 16px; width: 16px;">
+                                    <path d="M0 0h512v512H0z" fill="#e3e3e3" fill-opacity="0"></path>
+                                    <g class="" transform="translate(0,0)" style="touch-action: none;">
+                                    <g><path d="M406.043 316C430.153 412.443 355.453 496 256.043 
+                                             496C156.633 496 81.638 413.62 106.043 316C121.043 256
+                                             196.043 166 256.043 16C316.043 166 391.043 256 406.043
+                                             316Z" class="selected" fill="#@color.HexColor" 
+                                             fill-opacity="1"></path></g></g></svg>
+                                @color.ColorName
+                            </a>
+                        </div>
+                    }
+                }
             </div>
         </div>
+        <div>
+            <iframe width="304" height="182" src="@Url.Content(Model.VideoURL)" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
-
-@*<div>
-    <h4>Painting</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Season)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Episode)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Episode)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ThumbnailFile)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ThumbnailFile)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-</div>
-    *@
-
-
 
 <div>
     <a asp-controller="Painting" asp-action="AllPaintings">Back to List</a>
