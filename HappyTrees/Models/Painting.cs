@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace HappyTrees.Models
 {
     public class Painting
     {
+
+        public Painting()
+        {
+            this.Colors = new HashSet<Color>();
+        }
+
+        [Key]
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public int Season { get; set; }
@@ -18,9 +24,9 @@ namespace HappyTrees.Models
 
         public string Description { get; set; }
 
-        public string VideoURL { get; set; }
+        public string VideoUrl { get; set; }
 
-        public List<Color> Colors { get; set; }
+        public virtual ICollection<Color> Colors { get; set; }
     }
 
 }

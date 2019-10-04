@@ -16,6 +16,12 @@ namespace HappyTrees.Services
             this.paintingRepository = paintingRepository;
         }
 
+        public void AddPainting(Painting painting)
+        {
+            // Validation Logic
+
+            paintingRepository.AddPainting(painting);
+        }
 
         public List<Painting> GetAllPaintings()
         {

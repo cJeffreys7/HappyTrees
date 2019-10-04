@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace HappyTrees.Models
 {
     public class Color
     {
+        [Key]
+        public int Id { get; set; }
+
         public string ColorName { get; set; }
 
         public string BuyLink { get; set; }
 
         public string HexColor { get; set; }
+
+        public int PaintingId { get; set; }
+
+        public virtual Painting Painting { get; set; }
 
         public static Color TitaniumWhite = new Color { ColorName = "Titanium White", BuyLink = "http://amzn.to/2zfjiJ7", HexColor = "FFFFFF" };
 

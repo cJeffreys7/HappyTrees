@@ -1,0 +1,24 @@
+﻿{
+  
+  "ContextClassName": "PaintingContext",
+  "DefaultDacpacSchema": null,
+  "IdReplace": false,
+  "IncludeConnectionString": false,
+  "OutputPath": "Data",
+  "ProjectRootNamespace": "HappyTrees",
+  "SelectedToBeGenerated": 0,
+  "Tables": [
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Colors"
+    },
+    {
+      "HasPrimaryKey": true,
+      "Name": "dbo.Paintings"
+    }
+  ],
+  "UseDatabaseNames": false,
+  "UseFluentApiOnly": true,
+  "UseHandleBars": false,
+  "UseInflector": false
+}

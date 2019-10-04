@@ -1,4 +1,5 @@
-﻿using HappyTrees.Models;
+﻿using HappyTrees.Data;
+using HappyTrees.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace HappyTrees.Services
         List<Painting> GetAllPaintings();
 
         Painting GetPainting(string title);
+
+        void AddPainting(Painting painting);
     }
 }
