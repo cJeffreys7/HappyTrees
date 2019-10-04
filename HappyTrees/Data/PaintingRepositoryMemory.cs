@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HappyTrees.Data
 {
@@ -18,7 +17,7 @@ namespace HappyTrees.Data
                 Title = "A Walk in the Woods", Season = 1, Episode = 1,
                 Description = "The very first episode of 'The Joy of Painting' with Bob Ross.",
                 ThumbnailFile = "~/Images/Thumbnails/S01E01.png",
-                VideoURL = "https://www.youtube.com/embed/oh5p5f5_-7A",
+                VideoUrl = "https://www.youtube.com/embed/oh5p5f5_-7A",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -33,7 +32,7 @@ namespace HappyTrees.Data
                 Episode = 2,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E02.png",
-                VideoURL = "https://www.youtube.com/embed/RInDWhYceLU",
+                VideoUrl = "https://www.youtube.com/embed/RInDWhYceLU",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -47,7 +46,7 @@ namespace HappyTrees.Data
                 Episode = 3,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E03.png",
-                VideoURL = "https://www.youtube.com/embed/UOziR7PoVco",
+                VideoUrl = "https://www.youtube.com/embed/UOziR7PoVco",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -62,7 +61,7 @@ namespace HappyTrees.Data
                 Episode = 4,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E04.png",
-                VideoURL = "https://www.youtube.com/embed/0pwoixRikn4",
+                VideoUrl = "https://www.youtube.com/embed/0pwoixRikn4",
                 Colors = new List<Color>
                     {
                         Color.VanDykeBrown, Color.PrussianBlue, Color.TitaniumWhite
@@ -75,7 +74,7 @@ namespace HappyTrees.Data
                 Episode = 5,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E05.png",
-                VideoURL = "https://www.youtube.com/embed/DFSIQNjKRfk",
+                VideoUrl = "https://www.youtube.com/embed/DFSIQNjKRfk",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -89,7 +88,7 @@ namespace HappyTrees.Data
                 Episode = 6,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E06.png",
-                VideoURL = "https://www.youtube.com/embed/loAzRUzx1wI",
+                VideoUrl = "https://www.youtube.com/embed/loAzRUzx1wI",
                 Colors = new List<Color>
                     {
                         Color.VanDykeBrown, Color.PrussianBlue, Color.TitaniumWhite, Color.BlackGesso
@@ -102,7 +101,7 @@ namespace HappyTrees.Data
                 Episode = 7,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E07.png",
-                VideoURL = "https://www.youtube.com/embed/sDdpc8uisD0",
+                VideoUrl = "https://www.youtube.com/embed/sDdpc8uisD0",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -116,7 +115,7 @@ namespace HappyTrees.Data
                 Episode = 8,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E08.png",
-                VideoURL = "https://www.youtube.com/embed/kQlFwTOkYzg",
+                VideoUrl = "https://www.youtube.com/embed/kQlFwTOkYzg",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -130,7 +129,7 @@ namespace HappyTrees.Data
                 Episode = 9,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E09.png",
-                VideoURL = "https://www.youtube.com/embed/QxcS7p1VHyQ",
+                VideoUrl = "https://www.youtube.com/embed/QxcS7p1VHyQ",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -144,7 +143,7 @@ namespace HappyTrees.Data
                 Episode = 10,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E10.png",
-                VideoURL = "https://www.youtube.com/embed/wDnLlywAL5I",
+                VideoUrl = "https://www.youtube.com/embed/wDnLlywAL5I",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -158,7 +157,7 @@ namespace HappyTrees.Data
                 Episode = 11,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E11.png",
-                VideoURL = "https://www.youtube.com/embed/Q03YvknOVe0",
+                VideoUrl = "https://www.youtube.com/embed/Q03YvknOVe0",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -172,7 +171,7 @@ namespace HappyTrees.Data
                 Episode = 12,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E12.png",
-                VideoURL = "https://www.youtube.com/embed/4E35-8x_y04",
+                VideoUrl = "https://www.youtube.com/embed/4E35-8x_y04",
                 Colors = new List<Color>
                     {
                         Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue, Color.TitaniumWhite
@@ -185,7 +184,7 @@ namespace HappyTrees.Data
                 Episode = 13,
                 Description = "",
                 ThumbnailFile = "~/Images/Thumbnails/S01E13.png",
-                VideoURL = "https://www.youtube.com/embed/IEQWfszfRlA",
+                VideoUrl = "https://www.youtube.com/embed/IEQWfszfRlA",
                 Colors = new List<Color>
                     {
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
@@ -193,6 +192,11 @@ namespace HappyTrees.Data
                     }
             }
         };
+
+        public void AddPainting(Painting painting)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Painting> GetAllPaintings()
         {
