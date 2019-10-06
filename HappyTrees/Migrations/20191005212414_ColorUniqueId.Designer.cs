@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HappyTrees.Migrations
 {
     [DbContext(typeof(PaintingContext))]
-    [Migration("20191004205839_Initial")]
-    partial class Initial
+    [Migration("20191005212414_ColorUniqueId")]
+    partial class ColorUniqueId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -30,9 +30,9 @@ namespace HappyTrees.Services
             return paintings;
         }
 
-        public Painting GetPainting(string title)
+        public Painting GetPainting(int id)
         {
-            Painting painting = paintingRepository.GetPainting(title);
+            Painting painting = paintingRepository.GetPainting(id);
 
             return painting;
         }

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using HappyTrees.Models;
-using HappyTrees.Data;
+using System.Threading.Tasks;
+using System.Threading;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore;
 
 namespace HappyTrees.Data
@@ -23,9 +23,9 @@ namespace HappyTrees.Data
             return context.Paintings.ToList();
         }
 
-        public Painting GetPainting(string title)
+        public Painting GetPainting(int id)
         {
-            Painting painting = context.Paintings.FirstOrDefault(p => p.Title == title);
+            Painting painting = context.Paintings.FirstOrDefault(p => p.Id == id);
             painting.Colors = GetColors(painting.Id);
             return painting;
         }
@@ -41,18 +41,6 @@ namespace HappyTrees.Data
         {
             context.Paintings.Add(painting);
             context.SaveChanges();
-
-            if (painting.Colors.Count > 0)
-            {
-                foreach (var color in painting.Colors)
-                {
-                    // Cannot insert explicit value for identity column error for Color
-                    // Not sure how to turn ON IDENTITY_INSERT
-                    // Better fix would be to prevent Id for Color being set multiple times
-                    context.Colors.Add(color);
-                }
-                context.SaveChanges();
-            }
         }
 
         private static List<Painting> defaultPaintings = new List<Painting>
@@ -237,6 +225,215 @@ namespace HappyTrees.Data
                         Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
                         Color.PhthaloGreen, Color.CadmiumYellow, Color.BrightRed, Color.TitaniumWhite
                     }
+            },
+            new Painting
+            {
+                Title = "Meadow Lake",
+                Season = 2,
+                Episode = 1,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E01.png",
+                VideoUrl = "https://www.youtube.com/embed/GARWowi0QXI",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Winter Sun",
+                Season = 2,
+                Episode = 2,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E02.png",
+                VideoUrl = "https://www.youtube.com/embed/VPfYRj4DDco",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Ebony Sea",
+                Season = 2,
+                Episode = 3,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E03.png",
+                VideoUrl = "https://www.youtube.com/embed/aOJsKNzO3i8",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BlackGesso,
+                        Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Shades of Grey",
+                Season = 2,
+                Episode = 4,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E04.png",
+                VideoUrl = "https://www.youtube.com/embed/I-ousb8-SD0",
+                Colors = new List<Color>
+                    {
+                        Color.VanDykeBrown, Color.PrussianBlue, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Autumn Splendor",
+                Season = 2,
+                Episode = 5,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E05.png",
+                VideoUrl = "https://www.youtube.com/embed/rTTWw5Gd79I",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Black River",
+                Season = 2,
+                Episode = 6,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E06.png",
+                VideoUrl = "https://www.youtube.com/embed/6O4sfJd8G_M",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Brown Mountain",
+                Season = 2,
+                Episode = 7,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E07.png",
+                VideoUrl = "https://www.youtube.com/embed/Vx6v47gHBWM",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Reflections",
+                Season = 2,
+                Episode = 8,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E08.png",
+                VideoUrl = "https://www.youtube.com/embed/0FYfo94qefg",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Black and White Seascape",
+                Season = 2,
+                Episode = 9,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E09.png",
+                VideoUrl = "https://www.youtube.com/embed/PMDyPrE0puo",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BlackGesso
+                    }
+            },
+            new Painting
+            {
+                Title = "Lazy River",
+                Season = 2,
+                Episode = 10,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E10.png",
+                VideoUrl = "https://www.youtube.com/embed/BW2wKKFvH1g",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Black Waterfall",
+                Season = 2,
+                Episode = 11,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E11.png",
+                VideoUrl = "https://www.youtube.com/embed/GzSqjyQUPZQ",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.TitaniumWhite, Color.BlackGesso, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Mountain Waterfall",
+                Season = 2,
+                Episode = 12,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E12.png",
+                VideoUrl = "https://www.youtube.com/embed/9jIt95PCFAA",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Final Grace",
+                Season = 2,
+                Episode = 13,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S02E13.png",
+                VideoUrl = "https://www.youtube.com/embed/miJ19Kz_i3Y",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Mountain Retreat",
+                Season = 3,
+                Episode = 1,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E01.png",
+                VideoUrl = "https://www.youtube.com/embed/hoimk4s8JoQ",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
             }
         };
 
@@ -244,10 +441,51 @@ namespace HappyTrees.Data
         {
             if (context.Paintings.Count() < defaultPaintings.Count)
             {
+                context.Database.OpenConnection();
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Colors ON");
                 for (int i = context.Paintings.Count(); i < defaultPaintings.Count; i++)
                 {
-                    AddPainting(defaultPaintings[i]);
+                    // Add each painting without colors to allow for manual insert of colors
+                    var paintingNoColors = new Painting
+                    {
+                        Id = defaultPaintings[i].Id,
+                        Season = defaultPaintings[i].Season,
+                        Episode = defaultPaintings[i].Episode,
+                        Title = defaultPaintings[i].Title,
+                        Description = defaultPaintings[i].Description,
+                        ThumbnailFile = defaultPaintings[i].ThumbnailFile,
+                        VideoUrl = defaultPaintings[i].VideoUrl
+                    };
+                    context.Paintings.Add(paintingNoColors);
+                    context.SaveChanges();
+
+                    foreach (var color in defaultPaintings[i].Colors)
+                    {
+                        if (context.Colors.Any<Color>())
+                        {
+                            color.Id = context.Colors.Last().Id + 1;
+                        }
+                        else
+                        {
+                            color.Id = 1;
+                        }
+                        if (context.Paintings.Any<Painting>())
+                        {
+                            color.PaintingId = context.Paintings.Last().Id;
+                        }
+                        else
+                        {
+                            color.PaintingId = 1;
+                        }
+                        // Insert each color manually to prevent overriding with non-unique Color Id's
+                        context.Database.ExecuteSqlCommand(
+                            $@"INSERT INTO [dbo].[Colors] ( [Id], [ColorName], [BuyLink], [HexColor], [PaintingId] ) 
+                               VALUES ( {color.Id}, {color.ColorName}, {color.BuyLink}, {color.HexColor}, {color.PaintingId} )");
+                    }
+                    context.SaveChanges();
                 }
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Colors OFF");
+                context.Database.CloseConnection();
             }
         }
     }
