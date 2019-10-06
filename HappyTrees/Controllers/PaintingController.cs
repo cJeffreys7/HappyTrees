@@ -29,12 +29,10 @@ namespace HappyTrees.Controllers
         }
 
         // Show selected painting's details
-        [HttpGet("{title}")]
-        //[Route("this-routes")]
-        public ActionResult PaintingDetails(string title)
+        [HttpGet("{title}/{id}")]
+        public ActionResult PaintingDetails(int id)
         {
-            title = title.Replace("-", " ");
-            Painting painting = paintingService.GetPainting(title);
+            Painting painting = paintingService.GetPainting(id);
 
             return View(painting);
         }

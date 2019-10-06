@@ -49,7 +49,7 @@
                 <div>
                         @* Create an a tag from current item image to open PaintingDetails view
                            Passes current item as Painting parameter to new view*@
-                        <a href="@Url.Action("PaintingDetails", "Painting", new { title = paintingNameClean})">
+                        <a href="@Url.Action("PaintingDetails", "Painting", new { id = item.Id, title = paintingNameClean })">
                             <img class="painting-thumbnail" src="@Url.Content(item.ThumbnailFile)" alt="Painting Thumbnail">
                         </a>
                 </div>

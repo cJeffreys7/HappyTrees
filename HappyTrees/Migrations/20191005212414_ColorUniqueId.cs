@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HappyTrees.Migrations
 {
-    public partial class Initial : Migration
+    public partial class ColorUniqueId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

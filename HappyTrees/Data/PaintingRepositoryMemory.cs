@@ -14,6 +14,7 @@ namespace HappyTrees.Data
         {
             new Painting
             {
+                Id = 1,
                 Title = "A Walk in the Woods", Season = 1, Episode = 1,
                 Description = "The very first episode of 'The Joy of Painting' with Bob Ross.",
                 ThumbnailFile = "~/Images/Thumbnails/S01E01.png",
@@ -27,6 +28,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 2,
                 Title = "Mt. McKinley",
                 Season = 1,
                 Episode = 2,
@@ -41,6 +43,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 3,
                 Title = "Ebony Sunset",
                 Season = 1,
                 Episode = 3,
@@ -56,6 +59,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 4,
                 Title = "Winter Mist",
                 Season = 1,
                 Episode = 4,
@@ -69,6 +73,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 5,
                 Title = "Quiet Stream",
                 Season = 1,
                 Episode = 5,
@@ -83,6 +88,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 6,
                 Title = "Winter Moon",
                 Season = 1,
                 Episode = 6,
@@ -96,6 +102,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 7,
                 Title = "Autumn Mountain",
                 Season = 1,
                 Episode = 7,
@@ -110,6 +117,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 8,
                 Title = "Peaceful Valley",
                 Season = 1,
                 Episode = 8,
@@ -124,6 +132,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 9,
                 Title = "Seascape",
                 Season = 1,
                 Episode = 9,
@@ -138,6 +147,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 10,
                 Title = "Mountain Lake",
                 Season = 1,
                 Episode = 10,
@@ -152,6 +162,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 11,
                 Title = "Winter Glow",
                 Season = 1,
                 Episode = 11,
@@ -166,6 +177,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 12,
                 Title = "Snow Fall",
                 Season = 1,
                 Episode = 12,
@@ -179,6 +191,7 @@ namespace HappyTrees.Data
             },
             new Painting
             {
+                Id = 13,
                 Title = "Final Reflections",
                 Season = 1,
                 Episode = 13,
@@ -203,9 +216,9 @@ namespace HappyTrees.Data
             return paintings;
         }
 
-        public Painting GetPainting(string title)
+        public Painting GetPainting(int id)
         {
-            Painting painting = paintings.FirstOrDefault(p => p.Title == title);
+            Painting painting = paintings.FirstOrDefault(p => p.Id == id);
             return painting;
         }
     }

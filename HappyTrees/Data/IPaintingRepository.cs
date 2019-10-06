@@ -7,7 +7,7 @@ namespace HappyTrees.Data
     {
         List<Painting> GetAllPaintings();
 
-        Painting GetPainting(string title);
+        Painting GetPainting(int id);
 
         void AddPainting(Painting painting);
     }
