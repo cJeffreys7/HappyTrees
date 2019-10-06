@@ -15,6 +15,8 @@ namespace HappyTrees.Controllers
     {
         private readonly IPaintingService paintingService;
 
+        private int paintingId;
+
         public PaintingController(IPaintingService paintingService)
         {
             this.paintingService = paintingService;
@@ -28,11 +30,20 @@ namespace HappyTrees.Controllers
             return View(paintings);
         }
 
-        // Show selected painting's details
-        [HttpGet("{title}/{id}")]
-        public ActionResult PaintingDetails(int id)
+        // Redirect to PaintingDetails without id parameter, store in TempData
+        public ActionResult PaintingDetailsIn(int id, string title)
         {
-            Painting painting = paintingService.GetPainting(id);
+            TempData["id"] = id;
+            return RedirectToAction("PaintingDetails", "Painting", new { title = title});
+        }
+
+        // Show selected painting's details, retrieve id from TempData, save id in new TempData
+        [HttpGet("{title}")]
+        public ActionResult PaintingDetails()
+        {
+            paintingId = Convert.ToInt32(TempData["id"]);
+            TempData["id"] = paintingId;
+            Painting painting = paintingService.GetPainting(paintingId);
 
             return View(painting);
         }
