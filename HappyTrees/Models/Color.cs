@@ -48,5 +48,7 @@ namespace HappyTrees.Models
 
         public static Color LiquidBlack = new Color { ColorName = "Liquid Black", BuyLink = "https://amzn.to/2OEFs13", HexColor = "000000" };
 
+        public static Color LiquidClear = new Color { ColorName = "Liquid Black", BuyLink = "https://amzn.to/35wlMCm", HexColor = "FFFFFF" };
+
     }
 }

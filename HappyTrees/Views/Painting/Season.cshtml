@@ -2,11 +2,29 @@
 
 @{
     ViewData["Title"] = "Season";
+
+    int totalSeasons = 5;
+    int currentSeason = Model.First().Season;
 }
 
 <style>
     h1 {
         font-size: 48px;
+    }
+
+    #season-select {
+        margin: 16px 0px;
+    }
+
+    .scrollable-menu {
+        height: auto;
+        max-height: 200px;
+        overflow-x: hidden;
+    }
+
+    #season-text {
+        font-size: 20px;
+        color: black;
     }
 
     .painting-grid {
@@ -35,23 +53,24 @@
     }
 </style>
 
-<h1>Season @Model.First().Season</h1>
+<h1>Season @currentSeason</h1>
 
-@{int totalSeasons = 4;}
-
-<div class="dropdown">
-    <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Season</button>
-    <ol class="dropdown-menu">
-        @for (int i = 0; i < totalSeasons; i++)
+<div id="season-select" class="btn-group">
+    <button class="btn-default dropdown-toggle" type="button" data-toggle="dropdown">Choose Season<span class="caret"></span></button>
+    <ol class="dropdown-menu scrollable-menu" role="menu">
+        @for (int i = 0; i < totalSeasons + 1; i++)
         {
             if (i == 0)
             {
-                <li><a href="@Url.Action("AllPaintings", "Painting")">All Seasons</a></li>
+                <li><a href="@Url.Action("AllPaintings", "Painting")" id="season-text">All Seasons</a></li>
 
             }
             else
             {
-                <li><a href="@Url.Action("SeasonIn", "Painting", new { season = i, totalSeason = totalSeasons})">Season @i</a></li>
+                <li>
+                    <a href="@Url.Action("SeasonIn", "Painting", new { season = i, totalSeason = totalSeasons})"
+                       id="season-text">Season @i</a>
+                </li>
 
             }
         }
