@@ -216,10 +216,16 @@ namespace HappyTrees.Data
             return paintings;
         }
 
+        public List<Painting> GetPaintingsOfSeason(int season)
+        {
+            throw new NotImplementedException();
+        }
+
         public Painting GetPainting(int id)
         {
             Painting painting = paintings.FirstOrDefault(p => p.Id == id);
             return painting;
         }
+
     }
 }

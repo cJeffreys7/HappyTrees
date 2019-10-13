@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<HappyTrees.Models.Painting>
 
 @{
-    ViewData["Title"] = "AllPaintings";
+    ViewData["Title"] = "Season";
 
-    int totalSeasons = Model.Last().Season;
+    int totalSeasons = 5;
+    int currentSeason = Model.First().Season;
 }
 
 <style>
@@ -11,17 +12,17 @@
         font-size: 48px;
     }
 
-    #season-select{
+    #season-select {
         margin: 16px 0px;
     }
 
-    .scrollable-menu{
+    .scrollable-menu {
         height: auto;
         max-height: 200px;
         overflow-x: hidden;
     }
 
-    #season-text{
+    #season-text {
         font-size: 20px;
         color: black;
     }
@@ -52,13 +53,13 @@
     }
 </style>
 
-<h1>All Paintings</h1>
+<h1>Season @currentSeason</h1>
 
 <div id="season-select" class="btn-group">
     <button class="btn-default dropdown-toggle" type="button" data-toggle="dropdown">Choose Season<span class="caret"></span></button>
-    <ul class="dropdown-menu scrollable-menu" role="menu">
+    <ol class="dropdown-menu scrollable-menu" role="menu">
         @for (int i = 0; i < totalSeasons + 1; i++)
-         {
+        {
             if (i == 0)
             {
                 <li><a href="@Url.Action("AllPaintings", "Painting")" id="season-text">All Seasons</a></li>
@@ -66,18 +67,19 @@
             }
             else
             {
-                <li><a href="@Url.Action("SeasonIn", "Painting", new { season = i, totalSeason = totalSeasons})" 
-                       id="season-text">Season @i</a></li>
+                <li>
+                    <a href="@Url.Action("SeasonIn", "Painting", new { season = i, totalSeason = totalSeasons})"
+                       id="season-text">Season @i</a>
+                </li>
 
             }
-         }
-    </ul>
+        }
+    </ol>
 </div>
-
 
 <div class="painting-grid">
     @foreach (var item in Model)
-     {
+    {
         // Format season and episode ID, set paintingName
         string paintingID = "S" + item.Season + "E" + item.Episode;
         string paintingName = item.Title;
@@ -98,9 +100,5 @@
                 @paintingName
             </div>
         </div>
-     }
+    }
 </div>
-
-
-
-
