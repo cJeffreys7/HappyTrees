@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HappyTrees.Models.Painting>
 
 @{
-    ViewData["Title"] = "AllPaintings";
+    ViewData["Title"] = "Season";
 }
 
 <style>
@@ -35,15 +35,15 @@
     }
 </style>
 
-<h1>All Paintings</h1>
+<h1>Season @Model.First().Season</h1>
 
-@{int totalSeasons = Model.Last().Season;}
+@{int totalSeasons = 4;}
 
 <div class="dropdown">
     <button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Season</button>
     <ol class="dropdown-menu">
         @for (int i = 0; i < totalSeasons; i++)
-         {
+        {
             if (i == 0)
             {
                 <li><a href="@Url.Action("AllPaintings", "Painting")">All Seasons</a></li>
@@ -54,14 +54,13 @@
                 <li><a href="@Url.Action("SeasonIn", "Painting", new { season = i, totalSeason = totalSeasons})">Season @i</a></li>
 
             }
-         }
+        }
     </ol>
 </div>
 
-
 <div class="painting-grid">
     @foreach (var item in Model)
-     {
+    {
         // Format season and episode ID, set paintingName
         string paintingID = "S" + item.Season + "E" + item.Episode;
         string paintingName = item.Title;
@@ -82,9 +81,5 @@
                 @paintingName
             </div>
         </div>
-     }
+    }
 </div>
-
-
-
-

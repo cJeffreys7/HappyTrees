@@ -16,6 +16,7 @@ namespace HappyTrees.Controllers
         private readonly IPaintingService paintingService;
 
         private int paintingId;
+        private int totalSeasons;
 
         public PaintingController(IPaintingService paintingService)
         {
@@ -27,6 +28,21 @@ namespace HappyTrees.Controllers
         public ActionResult AllPaintings()
         {
             List<Painting> paintings = paintingService.GetAllPaintings();
+            return View(paintings);
+        }
+
+        public ActionResult SeasonIn(int season, int totalSeasons)
+        {
+            TempData["totalSeasons"] = totalSeasons;
+            return RedirectToAction("Season", "Painting", new { season = season });
+        }
+
+        [HttpGet("{season}")]
+        public ActionResult Season(int season)
+        {
+            totalSeasons = Convert.ToInt32(TempData["totalSeasons"]);
+            TempData["totalSeasons"] = totalSeasons;
+            List<Painting> paintings = paintingService.GetPaintingsOfSeason(season);
             return View(paintings);
         }
 

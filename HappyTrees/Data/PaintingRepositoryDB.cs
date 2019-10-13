@@ -23,6 +23,11 @@ namespace HappyTrees.Data
             return context.Paintings.ToList();
         }
 
+        public List<Painting> GetPaintingsOfSeason(int season)
+        {
+            return context.Paintings.Where(p => p.Season == season).ToList();
+        }
+
         public Painting GetPainting(int id)
         {
             Painting painting = context.Paintings.FirstOrDefault(p => p.Id == id);
@@ -434,6 +439,196 @@ namespace HappyTrees.Data
                         Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
                         Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
                     }
+            },
+            new Painting
+            {
+                Title = "Blue Moon",
+                Season = 3,
+                Episode = 2,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E02.png",
+                VideoUrl = "https://www.youtube.com/embed/loit61vLUMc",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Bubbling Stream",
+                Season = 3,
+                Episode = 3,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E03.png",
+                VideoUrl = "https://www.youtube.com/embed/fuFalEXVN0k",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Winter Night",
+                Season = 3,
+                Episode = 4,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E04.png",
+                VideoUrl = "https://www.youtube.com/embed/fuFalEXVN0k",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloGreen, Color.CadmiumYellow,
+                        Color.YellowOchre, Color.BrightRed, Color.TitaniumWhite, Color.LiquidBlack
+                    }
+            },
+            new Painting
+            {
+                Title = "Distant Hills",
+                Season = 3,
+                Episode = 5,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E05.png",
+                VideoUrl = "https://www.youtube.com/embed/8Zge88tVwjE",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.CadmiumYellow,
+                        Color.YellowOchre, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Covered Bridge",
+                Season = 3,
+                Episode = 6,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E06.png",
+                VideoUrl = "https://www.youtube.com/embed/OHSm8kLE7js",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.MidnightBlack,
+                        Color.PrussianBlue, Color.CadmiumYellow, Color.YellowOchre, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Quiet Inlet",
+                Season = 3,
+                Episode = 7,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E07.png",
+                VideoUrl = "https://www.youtube.com/embed/9N5IWKzYIyU",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Night Light",
+                Season = 3,
+                Episode = 8,
+                Description = "Bob does the opening painting of season 3: a beautiful lighthouse in the night.",
+                ThumbnailFile = "~/Images/Thumbnails/S03E08.png",
+                VideoUrl = "https://www.youtube.com/embed/l141Y0x8om0",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloGreen,
+                        Color.CadmiumYellow, Color.YellowOchre, Color.TitaniumWhite, Color.BlackGesso,
+                        Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "The Old Mill",
+                Season = 3,
+                Episode = 9,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E09.png",
+                VideoUrl = "https://www.youtube.com/embed/OFKFUJ9eDNs",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Campfire",
+                Season = 3,
+                Episode = 10,
+                Description = "Bob has a crazy day and does a crazy painting.",
+                ThumbnailFile = "~/Images/Thumbnails/S03E10.png",
+                VideoUrl = "https://www.youtube.com/embed/L5bXkI0-pEg",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.BlackGesso, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Rustic Barn",
+                Season = 3,
+                Episode = 11,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E11.png",
+                VideoUrl = "https://www.youtube.com/embed/WJJwrnFhUUg",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Hidden Lake",
+                Season = 3,
+                Episode = 12,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S03E12.png",
+                VideoUrl = "https://www.youtube.com/embed/P_DaqkFbnac",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Peaceful Waters",
+                Season = 3,
+                Episode = 13,
+                Description = "Bob does a little Q&A session with his the help of his son Steve.",
+                ThumbnailFile = "~/Images/Thumbnails/S03E13.png",
+                VideoUrl = "https://www.youtube.com/embed/Z0vtjRLqXcQ",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Purple Splendor",
+                Season = 4,
+                Episode = 1,
+                Description = "With only four colors Bob shows us how to do a great winter scene.",
+                ThumbnailFile = "~/Images/Thumbnails/S04E01.png",
+                VideoUrl = "https://www.youtube.com/embed/hP4GfMgsNVE",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue, Color.TitaniumWhite
+                    }
             }
         };
 
@@ -488,5 +683,6 @@ namespace HappyTrees.Data
                 context.Database.CloseConnection();
             }
         }
+
     }
 }

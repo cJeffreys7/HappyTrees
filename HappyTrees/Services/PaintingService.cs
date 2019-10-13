@@ -30,6 +30,12 @@ namespace HappyTrees.Services
             return paintings;
         }
 
+        public List<Painting> GetPaintingsOfSeason(int season)
+        {
+            List<Painting> paintings = paintingRepository.GetPaintingsOfSeason(season);
+            return paintings;
+        }
+
         public Painting GetPainting(int id)
         {
             Painting painting = paintingRepository.GetPainting(id);
