@@ -24,6 +24,8 @@ namespace HappyTrees.Models
 
         public static Color VanDykeBrown = new Color { ColorName = "Van Dyke Brown", BuyLink = "http://amzn.to/2ivJmI1", HexColor = "221B15" };
 
+        public static Color DarkSienna = new Color { ColorName = "Dark Sienna", BuyLink = "https://amzn.to/36vnapu", HexColor = "3C1414" };
+
         public static Color MidnightBlack = new Color { ColorName = "Midnight Black", BuyLink = "https://amzn.to/2qaLgoZ", HexColor = "000000" };
 
         public static Color PrussianBlue = new Color { ColorName = "Prussian Blue", BuyLink = "http://amzn.to/2zlo7CD", HexColor = "021E44" };

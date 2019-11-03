@@ -997,6 +997,389 @@ namespace HappyTrees.Data
                         Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
                         Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
                     }
+            },
+            new Painting
+            {
+                Title = "Blue River",
+                Season = 6,
+                Episode = 1,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E01.png",
+                VideoUrl = "https://www.youtube.com/embed/LygUyAb78oY",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BlackGesso, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Nature's Edge",
+                Season = 6,
+                Episode = 2,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E02.png",
+                VideoUrl = "https://www.youtube.com/embed/Bcqyzo85A1o",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Morning Mist",
+                Season = 6,
+                Episode = 3,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E03.png",
+                VideoUrl = "https://www.youtube.com/embed/wbZreRaE74k",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Whispering Stream",
+                Season = 6,
+                Episode = 4,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E04.png",
+                VideoUrl = "https://www.youtube.com/embed/QglIjlqsUdU",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Secluded Forest",
+                Season = 6,
+                Episode = 5,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E05.png",
+                VideoUrl = "https://www.youtube.com/embed/USkduOfwJok",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BlackGesso, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Snow Trail",
+                Season = 6,
+                Episode = 6,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E06.png",
+                VideoUrl = "https://www.youtube.com/embed/n9EsFFtwZnE",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue, Color.PhthaloGreen,
+                        Color.CadmiumYellow, Color.YellowOchre, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Arctic Beauty",
+                Season = 6,
+                Episode = 7,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E07.png",
+                VideoUrl = "https://www.youtube.com/embed/UQ-RTZCOQn0",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Horizons West",
+                Season = 6,
+                Episode = 8,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E08.png",
+                VideoUrl = "https://www.youtube.com/embed/m6UM-rN2D6s",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue, Color.CadmiumYellow,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "High Chateau",
+                Season = 6,
+                Episode = 9,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E09.png",
+                VideoUrl = "https://www.youtube.com/embed/dafH8ks9Zww",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Country Life",
+                Season = 6,
+                Episode = 10,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E10.png",
+                VideoUrl = "https://www.youtube.com/embed/j8Jf7QVKLgQ",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Western Expanse",
+                Season = 6,
+                Episode = 11,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E11.png",
+                VideoUrl = "https://www.youtube.com/embed/MTInkV5ODjk",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Marshlands",
+                Season = 6,
+                Episode = 12,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E12.png",
+                VideoUrl = "https://www.youtube.com/embed/Ugiwi8uizpg",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow, Color.BrightRed,
+                        Color.TitaniumWhite, Color.BlackGesso, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Blaze of Color",
+                Season = 6,
+                Episode = 13,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S06E13.png",
+                VideoUrl = "https://www.youtube.com/embed/se7wOprxRGs",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PhthaloBlue,
+                        Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite, Color.BurntUmber
+                    }
+            },
+            new Painting
+            {
+                Title = "Winter Cabin",
+                Season = 7,
+                Episode = 1,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E01.png",
+                VideoUrl = "https://www.youtube.com/embed/kdlHV6ceI_g",
+                Colors = new List<Color>
+                    {
+                        Color.VanDykeBrown, Color.DarkSienna, Color.PrussianBlue, Color.YellowOchre,
+                        Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Secluded Lake",
+                Season = 7,
+                Episode = 2,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E02.png",
+                VideoUrl = "https://www.youtube.com/embed/2OxSJcFvpoU",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna,
+                        Color.MidnightBlack, Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow,
+                        Color.YellowOchre, Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Evergreens at Sunset",
+                Season = 7,
+                Episode = 3,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E03.png",
+                VideoUrl = "https://www.youtube.com/embed/YQPEy3hYGo8",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.MidnightBlack, Color.CadmiumYellow,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Mountain Cabin",
+                Season = 7,
+                Episode = 4,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E04.png",
+                VideoUrl = "https://www.youtube.com/embed/E3IAMvO8GyM",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna,
+                        Color.MidnightBlack, Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow,
+                        Color.YellowOchre, Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Portrait of Sally",
+                Season = 7,
+                Episode = 5,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E05.png",
+                VideoUrl = "https://www.youtube.com/embed/MHJB0IBnuD4",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.DarkSienna, Color.PhthaloBlue, Color.CadmiumYellow,
+                        Color.YellowOchre, Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Misty Waterfall",
+                Season = 7,
+                Episode = 6,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E06.png",
+                VideoUrl = "https://www.youtube.com/embed/530_cVmexiI",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna,
+                        Color.MidnightBlack, Color.PhthaloBlue, Color.PhthaloGreen, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Barn at Sunset",
+                Season = 7,
+                Episode = 7,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E07.png",
+                VideoUrl = "https://www.youtube.com/embed/WT6n0K2zGnA",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna, Color.MidnightBlack,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.IndianYellow,
+                        Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Mountain Splendor",
+                Season = 7,
+                Episode = 8,
+                Description = "Bob shows us how to do the opening painting of season 7.",
+                ThumbnailFile = "~/Images/Thumbnails/S07E08.png",
+                VideoUrl = "https://www.youtube.com/embed/GhOGZMpPUSE",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna,
+                        Color.MidnightBlack, Color.PrussianBlue, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Lake by Mountain",
+                Season = 7,
+                Episode = 9,
+                Description = "Bob's son Steve Ross show us how to paint a fantastic landscape painting.",
+                ThumbnailFile = "~/Images/Thumbnails/S07E09.png",
+                VideoUrl = "https://www.youtube.com/embed/yAiYirlcq7o",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.PrussianBlue,
+                        Color.PhthaloBlue, Color.PhthaloGreen, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Mountain Glory",
+                Season = 7,
+                Episode = 10,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E10.png",
+                VideoUrl = "https://www.youtube.com/embed/0M9pwLHRR2c",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.VanDykeBrown, Color.DarkSienna, Color.MidnightBlack,
+                        Color.PrussianBlue, Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre,
+                        Color.IndianYellow, Color.BrightRed, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Grey Winter",
+                Season = 7,
+                Episode = 11,
+                Description = "Using only three colors Bob shows us how to paint a fantastic winter scene.",
+                ThumbnailFile = "~/Images/Thumbnails/S07E11.png",
+                VideoUrl = "https://www.youtube.com/embed/sS-hNYgDUak",
+                Colors = new List<Color>
+                    {
+                        Color.AlizarinCrimson, Color.MidnightBlack, Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Dock Scene",
+                Season = 7,
+                Episode = 12,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E12.png",
+                VideoUrl = "https://www.youtube.com/embed/4KYxkqlzyqM",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.VanDykeBrown, Color.DarkSienna, Color.MidnightBlack,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.BrightRed,
+                        Color.TitaniumWhite
+                    }
+            },
+            new Painting
+            {
+                Title = "Dark Waterfall",
+                Season = 7,
+                Episode = 13,
+                Description = "",
+                ThumbnailFile = "~/Images/Thumbnails/S07E13.png",
+                VideoUrl = "https://www.youtube.com/embed/VqMbL00eZqw",
+                Colors = new List<Color>
+                    {
+                        Color.SapGreen, Color.AlizarinCrimson, Color.VanDykeBrown, Color.DarkSienna,
+                        Color.PhthaloBlue, Color.CadmiumYellow, Color.YellowOchre, Color.BrightRed,
+                        Color.TitaniumWhite, Color.LiquidBlack
+                    }
             }
         };
 

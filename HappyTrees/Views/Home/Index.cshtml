@@ -2,7 +2,51 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<style>
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    #painting-btns {
+        display: grid;
+        grid-template-columns: 256px 256px;
+        grid-gap: 8px;
+    }
+
+    body {
+        background-image: url("~/Images/bg5.jpg");
+        background-color: lightpink;
+        height: 1000px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+</style>
+
+<html>
+<body background="~/Images/bg5.jpg">
+    <div class="bg-img">
+
+        <h1>
+            All About Painting and Bob Ross
+        </h1>
+
+        <h2>
+            This site is a database listing all Bob Ross Paintings, and a great search function to help you find your next painting.
+        </h2>
+
+        <div id="painting-btns">
+            <div id="all-paintings">
+                <a href="@Url.Action("AllPaintings", "Painting")" class="btn btn-primary">All Paintings</a>
+            </div>
+        </div>
+        @*<img class="bg-primary" src="~/Images/bg5.jpg" />*@
+    </div>
+</body>
+</html>
