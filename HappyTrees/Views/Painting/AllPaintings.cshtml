@@ -77,9 +77,10 @@
 
 <div class="painting-grid">
     @foreach (var item in Model)
-     {
+    {
         // Format season and episode ID, set paintingName
         string paintingID = "S" + item.Season + "E" + item.Episode;
+        if (item.Title == null) { item.Title = "Test Painting"; }
         string paintingName = item.Title;
         string paintingNameClean = paintingName.Replace(" ", "-");
 

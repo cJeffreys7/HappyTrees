@@ -73,21 +73,25 @@ namespace HappyTrees.Controllers
         // POST: Painting/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePainting(IFormCollection collection)
+        public ActionResult CreatePainting(Painting painting)
         {
             try
             {
                 // TODO: Add insert logic here
-                Painting painting = new Painting()
+                //Painting painting = new Painting()
+                //{
+                //    Title = collection["title"],
+                //    Season = int.Parse(collection["season"]),
+                //    Episode = int.Parse(collection["episode"]),
+                //    Description = collection["description"],
+                //    ThumbnailFile = collection["thumbnailfile"],
+                //    VideoUrl = collection["videourl"]
+                //};
+
+                if (painting.Validate())
                 {
-                    Title = collection["title"],
-                    Season = int.Parse(collection["season"]),
-                    Episode = int.Parse(collection["episode"]),
-                    Description = collection["description"],
-                    ThumbnailFile = collection["thumbnailfile"],
-                    VideoUrl = collection["videourl"]
-                };
-                paintingService.AddPainting(painting);
+                    paintingService.AddPainting(painting);
+                }
 
                 return RedirectToAction(nameof(AllPaintings));
             }

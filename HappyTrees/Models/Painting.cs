@@ -24,9 +24,32 @@ namespace HappyTrees.Models
 
         public string Description { get; set; }
 
+        public enum PaintingType
+        {
+            Other,
+            Building,
+            Mountain,
+            Portrait,
+            Water,
+            Winter,
+            Woods
+        }
+
+        public int PaintingTypes { get; set; }
+
         public string VideoUrl { get; set; }
 
         public virtual ICollection<Color> Colors { get; set; }
+
+        public bool Validate()
+        {
+            var isValid = true;
+
+            if (Season <= 0) isValid = false;
+            if (Episode <= 0) isValid = false;
+
+            return isValid;
+        }
     }
 
 }
