@@ -105,7 +105,7 @@ namespace HappyTrees.Controllers
             return View();
         }
 
-        // POST: Painting/Create
+        // Takes colors from multi select drop down list in View and adds to Painting Model
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreatePainting(Painting painting, string[] colors)

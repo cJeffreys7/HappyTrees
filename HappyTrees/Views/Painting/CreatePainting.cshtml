@@ -46,6 +46,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Colors" class="control-label"></label>
+                
+                @*Dropdown list generated in Controller, multiselect through @multiple and array parameter in CreatePainting Action*@
 
                 @Html.DropDownList("colors", (List<SelectListItem>)ViewBag.itemList, new { @class = "form-control chosen-select", @multiple = "true" })
 
