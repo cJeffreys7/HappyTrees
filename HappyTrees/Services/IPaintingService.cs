@@ -17,5 +17,7 @@ namespace HappyTrees.Services
         Painting GetPainting(int id);
 
         void AddPainting(Painting painting);
+
+        bool DeletePainting(int id);
     }
 }

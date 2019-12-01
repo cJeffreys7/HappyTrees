@@ -190,6 +190,7 @@ namespace HappyTrees.Controllers
             try
             {
                 // TODO: Add delete logic here
+                paintingService.DeletePainting(id);
 
                 return RedirectToAction(nameof(AllPaintings));
             }

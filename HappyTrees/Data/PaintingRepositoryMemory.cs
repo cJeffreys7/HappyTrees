@@ -227,5 +227,18 @@ namespace HappyTrees.Data
             return painting;
         }
 
+        public bool DeletePainting(int id)
+        {
+            foreach (var painting in paintings)
+            {
+                if(id == painting.Id)
+                {
+                    paintings.Remove(painting);
+                    return true;
+                }
+            };
+
+            return false;
+        }
     }
 }

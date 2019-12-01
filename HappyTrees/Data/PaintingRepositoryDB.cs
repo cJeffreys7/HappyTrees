@@ -48,6 +48,15 @@ namespace HappyTrees.Data
             context.SaveChanges();
         }
 
+        public bool DeletePainting(int id)
+        {
+            Painting painting = context.Paintings.FirstOrDefault(p => p.Id == id);
+            context.Paintings.Remove(painting);
+            context.SaveChanges();
+
+            return true;
+        }
+
         private static List<Painting> defaultPaintings = new List<Painting>
         {
             new Painting

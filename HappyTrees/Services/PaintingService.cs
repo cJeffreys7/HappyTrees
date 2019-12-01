@@ -42,5 +42,12 @@ namespace HappyTrees.Services
 
             return painting;
         }
+
+        public bool DeletePainting(int id)
+        {
+            bool deleteSuccess = paintingRepository.DeletePainting(id);
+
+            return deleteSuccess;
+        }
     }
 }
