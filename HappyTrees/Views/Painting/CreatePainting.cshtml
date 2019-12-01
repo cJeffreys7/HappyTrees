@@ -28,6 +28,7 @@
                 <input asp-for="Episode" class="form-control" />
                 <span asp-validation-for="Episode" class="text-danger"></span>
             </div>
+            @* Create File I/O for Thumbnail Image submissions*@
             <div class="form-group">
                 <label asp-for="ThumbnailFile" class="control-label"></label>
                 <input asp-for="ThumbnailFile" class="form-control" />
@@ -45,34 +46,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Colors" class="control-label"></label>
-                @*<input asp-for="Colors" type="checkbox" class="form-control" />*@
-                <select asp-for="Colors" class="form-control">
-                    <option value="1">Sap Green</option>
-                    <option value="2">Alizarin Crimson</option>
-                    <option value="3">Van Dyke Brown</option>
-                    <option value="4">Dark Sienna</option>
-                    <option value="5">Midnight Black</option>
-                    <option value="6">Prussian Blue</option>
-                    <option value="7">Phthalo Blue</option>
-                    <option value="8">Phthalo Green</option>
-                    <option value="9">Cadmium Yellow</option>
-                    <option value="10">Yellow Ochre</option>
-                    <option value="11">Indian Yellow</option>
-                    <option value="12">Bright Red</option>
-                    <option value="13">Titanium White</option>
-                    <option value="14">Burnt Umber</option>
-                    <option value="15">Black Gesso</option>
-                    <option value="16">Liquid Black</option>
-                    <option value="17">Liquid Clear</option>
-                </select>
-                @*@for (int i = 0; i < 9; i++)
-        {
-            <input name="AreChecked" type="checkbox" value="@i" />@i<br />
-                                    @Html.ListBox("PaintingColors", (MultiSelectList)ViewBag.Categories, new { multiple = "multiple" })
-                <select id="PaintingColors" multiple="multiple" name="PaintingColors"></select>
-                    onclick="@Url.Action("CreateNewPainting", "Painting") new { model }"
-        }*@
 
+                @Html.DropDownList("colors", (List<SelectListItem>)ViewBag.itemList, new { @class = "form-control chosen-select", @multiple = "true" })
 
                 <span asp-validation-for="Colors" class="text-danger"></span>
             </div>

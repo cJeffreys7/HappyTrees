@@ -7,6 +7,7 @@ using HappyTrees.Models;
 using HappyTrees.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HappyTrees.Controllers
 {
@@ -67,26 +68,85 @@ namespace HappyTrees.Controllers
         // GET: Painting/Create
         public ActionResult CreatePainting()
         {
+            List<Color> colors = new List<Color>()
+            {
+                Color.SapGreen,
+                Color.AlizarinCrimson,
+                Color.VanDykeBrown,
+                Color.DarkSienna,
+                Color.MidnightBlack,
+                Color.PrussianBlue,
+                Color.PhthaloBlue,
+                Color.PhthaloGreen,
+                Color.CadmiumYellow,
+                Color.YellowOchre,
+                Color.IndianYellow,
+                Color.BrightRed,
+                Color.TitaniumWhite,
+                Color.BurntUmber,
+                Color.BlackGesso,
+                Color.LiquidBlack,
+                Color.LiquidClear
+            };
+
+            var itemList = new List<SelectListItem>();
+
+            for (int i = 0; i < colors.Count; i++)
+            {
+                var itemToAdd = new SelectListItem
+                {
+                    Text = colors[i].ColorName,
+                    Value = (i + 1).ToString()
+                };
+                itemList.Add(itemToAdd);
+            }
+
+            ViewBag.itemList = itemList;
             return View();
         }
 
         // POST: Painting/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePainting(Painting painting)
+        public ActionResult CreatePainting(Painting painting, string[] colors)
         {
             try
             {
-                // TODO: Add insert logic here
-                //Painting painting = new Painting()
-                //{
-                //    Title = collection["title"],
-                //    Season = int.Parse(collection["season"]),
-                //    Episode = int.Parse(collection["episode"]),
-                //    Description = collection["description"],
-                //    ThumbnailFile = collection["thumbnailfile"],
-                //    VideoUrl = collection["videourl"]
-                //};
+                List<Color> colorsToAdd = new List<Color>();
+
+                if (colors.Length > 1)
+                {
+                    foreach (var colorName in colors)
+                    {
+                        var colorToAdd = new Color();
+
+                        if(Int32.TryParse(colorName, out int colorIndex))
+                        {
+                            colorToAdd = colorToAdd.AssignColor(colorIndex);
+                            if (colorToAdd.Validate())
+                            {
+                                colorsToAdd.Add(colorToAdd);
+                            }
+                        }
+                    }
+                }
+                else if (colors.Any())
+                {
+                    var colorToAdd = new Color();
+                    if (Int32.TryParse(colors[0], out int colorIndex))
+                    {
+                        colorToAdd = colorToAdd.AssignColor(colorIndex);
+                        if (colorToAdd.Validate())
+                        {
+                            colorsToAdd.Add(colorToAdd);
+                        }
+                    }
+                }
+
+                if (colorsToAdd.Any())
+                {
+                    painting.Colors = colorsToAdd;
+                }
 
                 if (painting.Validate())
                 {
@@ -125,9 +185,18 @@ namespace HappyTrees.Controllers
         }
 
         // GET: Painting/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeletePainting(int id)
         {
-            return View();
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction(nameof(AllPaintings));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // POST: Painting/Delete/5

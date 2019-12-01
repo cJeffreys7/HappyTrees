@@ -87,4 +87,5 @@
 
 <div>
     <a asp-controller="Painting" asp-action="AllPaintings">Back to List</a>
+    <a href="@Url.Action("DeletePainting", "Painting", new { id = Model.Id })">Delete Painting</a>
 </div>
