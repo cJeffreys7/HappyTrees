@@ -161,20 +161,99 @@ namespace HappyTrees.Controllers
             }
         }
 
-        // GET: Painting/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Painting/Update
+        public ActionResult UpdatePainting(int id)
         {
-            return View();
+            Painting painting = paintingService.GetPainting(id);
+
+            List<Color> colors = new List<Color>()
+            {
+                Color.SapGreen,
+                Color.AlizarinCrimson,
+                Color.VanDykeBrown,
+                Color.DarkSienna,
+                Color.MidnightBlack,
+                Color.PrussianBlue,
+                Color.PhthaloBlue,
+                Color.PhthaloGreen,
+                Color.CadmiumYellow,
+                Color.YellowOchre,
+                Color.IndianYellow,
+                Color.BrightRed,
+                Color.TitaniumWhite,
+                Color.BurntUmber,
+                Color.BlackGesso,
+                Color.LiquidBlack,
+                Color.LiquidClear
+            };
+            bool[] selectedColors = painting.SelectedColors(colors);
+
+            var itemList = new List<SelectListItem>();
+
+            // TODO: May throw exception through asynchronous method returning null itemList
+            for (int i = 0; i < colors.Count; i++)
+            {
+                var itemToAdd = new SelectListItem
+                {
+                    Text = colors[i].ColorName,
+                    Value = (i + 1).ToString(),
+                    Selected = (selectedColors[i])
+                };
+                itemList.Add(itemToAdd);
+            }
+
+            ViewBag.itemList = itemList;
+
+            return View(painting);
         }
 
-        // POST: Painting/Edit/5
+        // POST: Painting/Update
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult UpdatePainting(Painting painting, string[] colors)
         {
             try
             {
-                // TODO: Add update logic here
+                List<Color> colorsToAdd = new List<Color>();
+
+                if (colors.Length > 1)
+                {
+                    foreach (var colorName in colors)
+                    {
+                        var colorToAdd = new Color();
+
+                        if (Int32.TryParse(colorName, out int colorIndex))
+                        {
+                            colorToAdd = colorToAdd.AssignColor(colorIndex);
+                            if (colorToAdd.Validate())
+                            {
+                                colorsToAdd.Add(colorToAdd);
+                            }
+                        }
+                    }
+                }
+                else if (colors.Any())
+                {
+                    var colorToAdd = new Color();
+                    if (Int32.TryParse(colors[0], out int colorIndex))
+                    {
+                        colorToAdd = colorToAdd.AssignColor(colorIndex);
+                        if (colorToAdd.Validate())
+                        {
+                            colorsToAdd.Add(colorToAdd);
+                        }
+                    }
+                }
+
+                if (colorsToAdd.Any())
+                {
+                    painting.Colors = colorsToAdd;
+                }
+
+                if (painting.Validate())
+                {
+                    paintingService.UpdatePainting(painting);
+                }
 
                 return RedirectToAction(nameof(AllPaintings));
             }
@@ -189,7 +268,6 @@ namespace HappyTrees.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
                 paintingService.DeletePainting(id);
 
                 return RedirectToAction(nameof(AllPaintings));

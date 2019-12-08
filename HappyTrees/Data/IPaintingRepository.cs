@@ -5,13 +5,15 @@ namespace HappyTrees.Data
 {
     public interface IPaintingRepository
     {
+        void AddPainting(Painting painting);
+
         List<Painting> GetAllPaintings();
 
         List<Painting> GetPaintingsOfSeason(int season);
 
         Painting GetPainting(int id);
 
-        void AddPainting(Painting painting);
+        void UpdatePainting(Painting painting);
 
         bool DeletePainting(int id);
     }

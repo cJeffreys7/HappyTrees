@@ -18,8 +18,6 @@ namespace HappyTrees.Services
 
         public void AddPainting(Painting painting)
         {
-            // Validation Logic
-
             paintingRepository.AddPainting(painting);
         }
 
@@ -41,6 +39,11 @@ namespace HappyTrees.Services
             Painting painting = paintingRepository.GetPainting(id);
 
             return painting;
+        }
+
+        public void UpdatePainting(Painting painting)
+        {
+            paintingRepository.UpdatePainting(painting);
         }
 
         public bool DeletePainting(int id)

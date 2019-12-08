@@ -17,6 +17,11 @@ namespace HappyTrees.Data
             this.context = context;
             InitializePaintings();
         }
+        public void AddPainting(Painting painting)
+        {
+            context.Paintings.Add(painting);
+            context.SaveChanges();
+        }
 
         public List<Painting> GetAllPaintings()
         {
@@ -42,9 +47,11 @@ namespace HappyTrees.Data
             return colors;
         }
 
-        public void AddPainting(Painting painting)
+        public void UpdatePainting(Painting painting)
         {
-            context.Paintings.Add(painting);
+            List<Color> removedColors = GetColors(painting.Id).Except(painting.Colors).ToList();
+            context.Update(painting);
+            context.Colors.RemoveRange(removedColors);
             context.SaveChanges();
         }
 
@@ -1443,6 +1450,5 @@ namespace HappyTrees.Data
                 context.Database.CloseConnection();
             }
         }
-
     }
 }

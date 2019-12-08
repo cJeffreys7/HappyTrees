@@ -9,6 +9,7 @@ namespace HappyTrees.Services
 {
     public interface IPaintingService
     {
+        void AddPainting(Painting painting);
 
         List<Painting> GetAllPaintings();
 
@@ -16,7 +17,7 @@ namespace HappyTrees.Services
 
         Painting GetPainting(int id);
 
-        void AddPainting(Painting painting);
+        void UpdatePainting(Painting painting);
 
         bool DeletePainting(int id);
     }
