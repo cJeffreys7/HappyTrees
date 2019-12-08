@@ -1,0 +1,70 @@
+﻿@model HappyTrees.Models.Painting
+
+@{
+    ViewData["Title"] = "UpdatePainting";
+}
+
+<h1>UpdatePainting</h1>
+
+<h4>Painting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdatePainting">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Season" class="control-label"></label>
+                <input asp-for="Season" class="form-control" />
+                <span asp-validation-for="Season" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Episode" class="control-label"></label>
+                <input asp-for="Episode" class="form-control" />
+                <span asp-validation-for="Episode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThumbnailFile" class="control-label"></label>
+                <input asp-for="ThumbnailFile" class="form-control" />
+                <span asp-validation-for="ThumbnailFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaintingTypes" class="control-label"></label>
+                <input asp-for="PaintingTypes" class="form-control" />
+                <span asp-validation-for="PaintingTypes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoUrl" class="control-label"></label>
+                <input asp-for="VideoUrl" class="form-control" />
+                <span asp-validation-for="VideoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Colors" class="control-label"></label>
+                @Html.DropDownList("colors", (List<SelectListItem>)ViewBag.itemList, 
+                new { @class = "form-control chosen-select", @multiple = "true" })
+                <span asp-validation-for="Colors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AllPaintings">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

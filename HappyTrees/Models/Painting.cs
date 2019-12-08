@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace HappyTrees.Models
 {
@@ -49,6 +50,25 @@ namespace HappyTrees.Models
             if (Episode <= 0) isValid = false;
 
             return isValid;
+        }
+
+        public bool[] SelectedColors(List<Color> totalColors)
+        {
+            // TO DO: Simplify either using queries or loop logic
+            string[] colorNames = new string[Colors.Count];
+            for (int i = 0; i < Colors.Count; i++)
+            {
+                colorNames[i] = Colors.ElementAt(i).ColorName;
+            }
+            bool[] selectedColors = new bool[totalColors.Count];
+            int colorCount = 0;
+            foreach (var color in totalColors)
+            {
+                selectedColors[colorCount] = colorNames.Contains(color.ColorName);
+                colorCount++;
+            }
+
+            return selectedColors;
         }
     }
 

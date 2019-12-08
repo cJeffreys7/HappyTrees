@@ -227,6 +227,11 @@ namespace HappyTrees.Data
             return painting;
         }
 
+        public void UpdatePainting(Painting painting)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool DeletePainting(int id)
         {
             foreach (var painting in paintings)
