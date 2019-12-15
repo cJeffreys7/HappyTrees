@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using HappyTrees.Data;
 using HappyTrees.Models;
 using HappyTrees.Services;
 using Microsoft.AspNetCore.Http;
@@ -15,13 +13,15 @@ namespace HappyTrees.Controllers
     public class PaintingController : Controller
     {
         private readonly IPaintingService paintingService;
+        private readonly IColorService colorService;
 
         private int paintingId;
         private int totalSeasons;
 
-        public PaintingController(IPaintingService paintingService)
+        public PaintingController(IPaintingService paintingService, IColorService colorService)
         {
             this.paintingService = paintingService;
+            this.colorService = colorService;
         }
 
 
@@ -68,40 +68,11 @@ namespace HappyTrees.Controllers
         // GET: Painting/Create
         public ActionResult CreatePainting()
         {
-            List<Color> colors = new List<Color>()
-            {
-                Color.SapGreen,
-                Color.AlizarinCrimson,
-                Color.VanDykeBrown,
-                Color.DarkSienna,
-                Color.MidnightBlack,
-                Color.PrussianBlue,
-                Color.PhthaloBlue,
-                Color.PhthaloGreen,
-                Color.CadmiumYellow,
-                Color.YellowOchre,
-                Color.IndianYellow,
-                Color.BrightRed,
-                Color.TitaniumWhite,
-                Color.BurntUmber,
-                Color.BlackGesso,
-                Color.LiquidBlack,
-                Color.LiquidClear
-            };
+            List<Color> colors = colorService.GetAllColors();
+            bool[] selectedColors = new bool[colors.Count];
 
-            var itemList = new List<SelectListItem>();
+            ViewBag.itemList = CreateItemList(colors, selectedColors);
 
-            for (int i = 0; i < colors.Count; i++)
-            {
-                var itemToAdd = new SelectListItem
-                {
-                    Text = colors[i].ColorName,
-                    Value = (i + 1).ToString()
-                };
-                itemList.Add(itemToAdd);
-            }
-
-            ViewBag.itemList = itemList;
             return View();
         }
 
@@ -112,46 +83,14 @@ namespace HappyTrees.Controllers
         {
             try
             {
-                List<Color> colorsToAdd = new List<Color>();
+                List<Color> newColors = CreateColorList(colors);
 
-                if (colors.Length > 1)
+                if (newColors.Any())
                 {
-                    foreach (var colorName in colors)
-                    {
-                        var colorToAdd = new Color();
-
-                        if(Int32.TryParse(colorName, out int colorIndex))
-                        {
-                            colorToAdd = colorToAdd.AssignColor(colorIndex);
-                            if (colorToAdd.Validate())
-                            {
-                                colorsToAdd.Add(colorToAdd);
-                            }
-                        }
-                    }
-                }
-                else if (colors.Any())
-                {
-                    var colorToAdd = new Color();
-                    if (Int32.TryParse(colors[0], out int colorIndex))
-                    {
-                        colorToAdd = colorToAdd.AssignColor(colorIndex);
-                        if (colorToAdd.Validate())
-                        {
-                            colorsToAdd.Add(colorToAdd);
-                        }
-                    }
+                    painting.Colors = newColors;
                 }
 
-                if (colorsToAdd.Any())
-                {
-                    painting.Colors = colorsToAdd;
-                }
-
-                if (painting.Validate())
-                {
-                    paintingService.AddPainting(painting);
-                }
+                paintingService.AddPainting(painting);
 
                 return RedirectToAction(nameof(AllPaintings));
             }
@@ -165,44 +104,10 @@ namespace HappyTrees.Controllers
         public ActionResult UpdatePainting(int id)
         {
             Painting painting = paintingService.GetPainting(id);
-
-            List<Color> colors = new List<Color>()
-            {
-                Color.SapGreen,
-                Color.AlizarinCrimson,
-                Color.VanDykeBrown,
-                Color.DarkSienna,
-                Color.MidnightBlack,
-                Color.PrussianBlue,
-                Color.PhthaloBlue,
-                Color.PhthaloGreen,
-                Color.CadmiumYellow,
-                Color.YellowOchre,
-                Color.IndianYellow,
-                Color.BrightRed,
-                Color.TitaniumWhite,
-                Color.BurntUmber,
-                Color.BlackGesso,
-                Color.LiquidBlack,
-                Color.LiquidClear
-            };
+            List<Color> colors = colorService.GetAllColors();
             bool[] selectedColors = painting.SelectedColors(colors);
 
-            var itemList = new List<SelectListItem>();
-
-            // TODO: May throw exception through asynchronous method returning null itemList
-            for (int i = 0; i < colors.Count; i++)
-            {
-                var itemToAdd = new SelectListItem
-                {
-                    Text = colors[i].ColorName,
-                    Value = (i + 1).ToString(),
-                    Selected = (selectedColors[i])
-                };
-                itemList.Add(itemToAdd);
-            }
-
-            ViewBag.itemList = itemList;
+            ViewBag.itemList = CreateItemList(colors, selectedColors);
 
             return View(painting);
         }
@@ -214,52 +119,25 @@ namespace HappyTrees.Controllers
         {
             try
             {
-                List<Color> colorsToAdd = new List<Color>();
+                List<Color> updatedColors = CreateColorList(colors);
 
-                if (colors.Length > 1)
+                if (updatedColors.Any())
                 {
-                    foreach (var colorName in colors)
-                    {
-                        var colorToAdd = new Color();
-
-                        if (Int32.TryParse(colorName, out int colorIndex))
-                        {
-                            colorToAdd = colorToAdd.AssignColor(colorIndex);
-                            if (colorToAdd.Validate())
-                            {
-                                colorsToAdd.Add(colorToAdd);
-                            }
-                        }
-                    }
-                }
-                else if (colors.Any())
-                {
-                    var colorToAdd = new Color();
-                    if (Int32.TryParse(colors[0], out int colorIndex))
-                    {
-                        colorToAdd = colorToAdd.AssignColor(colorIndex);
-                        if (colorToAdd.Validate())
-                        {
-                            colorsToAdd.Add(colorToAdd);
-                        }
-                    }
+                    painting.Colors = updatedColors;
                 }
 
-                if (colorsToAdd.Any())
-                {
-                    painting.Colors = colorsToAdd;
-                }
-
-                if (painting.Validate())
-                {
-                    paintingService.UpdatePainting(painting);
-                }
+                paintingService.UpdatePainting(painting);
 
                 return RedirectToAction(nameof(AllPaintings));
             }
             catch
             {
-                return View();
+                List<Color> colorList = colorService.GetAllColors();
+                bool[] selectedColors = painting.SelectedColors(colorList);
+
+                ViewBag.itemList = CreateItemList(colorList, selectedColors);
+
+                return View(painting);
             }
         }
 
@@ -293,6 +171,40 @@ namespace HappyTrees.Controllers
             {
                 return View();
             }
+        }
+
+        private List<Color> CreateColorList(string[] colorValues)
+        {
+            List<Color> colors = new List<Color>();
+
+            if (colorValues.Length > 1)
+            {
+                foreach (var colorValue in colorValues)
+                {
+                    var color = colorService.GetColor(colorValue);
+                    colors.Add(color);
+                }
+            }
+
+            return colors;
+        }
+
+        private static List<SelectListItem> CreateItemList(List<Color> colors, bool[] selectedColors)
+        {
+            var itemList = new List<SelectListItem>();
+
+            for (int i = 0; i < colors.Count; i++)
+            {
+                var itemToAdd = new SelectListItem
+                {
+                    Text = colors[i].ColorName,
+                    Value = colors[i].ColorValue,
+                    Selected = (selectedColors[i])
+                };
+                itemList.Add(itemToAdd);
+            }
+
+            return itemList;
         }
     }
 }

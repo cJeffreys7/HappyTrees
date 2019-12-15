@@ -16,41 +16,45 @@ namespace HappyTrees.Services
             this.paintingRepository = paintingRepository;
         }
 
+        // Service layer validation
+        private bool ValidatePainting(Painting painting)
+        {
+            if (painting.Season <= 0) return false;
+            if (painting.Episode <= 0) return false;
+
+            return true;
+        }
+
         public void AddPainting(Painting painting)
         {
-            paintingRepository.AddPainting(painting);
+            if(ValidatePainting(painting))
+                paintingRepository.AddPainting(painting);
         }
 
         public List<Painting> GetAllPaintings()
         {
-            List<Painting> paintings = paintingRepository.GetAllPaintings();
-
-            return paintings;
+            return paintingRepository.GetAllPaintings();
         }
 
         public List<Painting> GetPaintingsOfSeason(int season)
         {
-            List<Painting> paintings = paintingRepository.GetPaintingsOfSeason(season);
-            return paintings;
+            return paintingRepository.GetPaintingsOfSeason(season);
         }
 
         public Painting GetPainting(int id)
         {
-            Painting painting = paintingRepository.GetPainting(id);
-
-            return painting;
+            return paintingRepository.GetPainting(id);
         }
 
         public void UpdatePainting(Painting painting)
         {
-            paintingRepository.UpdatePainting(painting);
+            if(ValidatePainting(painting))
+                paintingRepository.UpdatePainting(painting);
         }
 
         public bool DeletePainting(int id)
         {
-            bool deleteSuccess = paintingRepository.DeletePainting(id);
-
-            return deleteSuccess;
+            return paintingRepository.DeletePainting(id);
         }
     }
 }

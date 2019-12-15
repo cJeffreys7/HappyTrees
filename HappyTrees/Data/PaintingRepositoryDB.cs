@@ -50,8 +50,10 @@ namespace HappyTrees.Data
         public void UpdatePainting(Painting painting)
         {
             List<Color> removedColors = GetColors(painting.Id).Except(painting.Colors).ToList();
-            context.Update(painting);
             context.Colors.RemoveRange(removedColors);
+
+            // TODO: Exception when updating colors of the same painting a second time
+            context.Update(painting);
             context.SaveChanges();
         }
 
