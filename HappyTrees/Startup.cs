@@ -39,6 +39,8 @@ namespace HappyTrees
 
             services.AddScoped<IPaintingService, PaintingService>();
             services.AddScoped<IPaintingRepository, PaintingRepositoryDB>();
+            services.AddScoped<IColorService, ColorService>();
+            services.AddScoped<IColorRepository, ColorRepositoryMemory>();
             services.AddDbContext<PaintingContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
