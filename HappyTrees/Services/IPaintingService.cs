@@ -11,11 +11,11 @@ namespace HappyTrees.Services
     {
         void AddPainting(Painting painting);
 
-        List<Painting> GetAllPaintings();
+        List<Painting> GetAllPaintings(IColorService colorService);
 
         List<Painting> GetPaintingsOfSeason(int season);
 
-        Painting GetPainting(int id);
+        Painting GetPainting(int id, IColorService colorService);
 
         void UpdatePainting(Painting painting);
 

@@ -38,7 +38,7 @@ namespace HappyTrees
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IPaintingService, PaintingService>();
-            services.AddScoped<IPaintingRepository, PaintingRepositoryDB>();
+            services.AddScoped<IPaintingRepository, PaintingRepositoryMemory>();
             services.AddScoped<IColorService, ColorService>();
             services.AddScoped<IColorRepository, ColorRepositoryMemory>();
             services.AddDbContext<PaintingContext>(options => 

@@ -1,4 +1,5 @@
 ﻿using HappyTrees.Models;
+using HappyTrees.Services;
 using System.Collections.Generic;
 
 namespace HappyTrees.Data
@@ -7,11 +8,11 @@ namespace HappyTrees.Data
     {
         void AddPainting(Painting painting);
 
-        List<Painting> GetAllPaintings();
+        List<Painting> GetAllPaintings(IColorService colorService);
 
         List<Painting> GetPaintingsOfSeason(int season);
 
-        Painting GetPainting(int id);
+        Painting GetPainting(int id, IColorService colorService);
 
         void UpdatePainting(Painting painting);
 

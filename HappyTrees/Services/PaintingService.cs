@@ -31,9 +31,9 @@ namespace HappyTrees.Services
                 paintingRepository.AddPainting(painting);
         }
 
-        public List<Painting> GetAllPaintings()
+        public List<Painting> GetAllPaintings(IColorService colorService)
         {
-            return paintingRepository.GetAllPaintings();
+            return paintingRepository.GetAllPaintings(colorService);
         }
 
         public List<Painting> GetPaintingsOfSeason(int season)
@@ -41,9 +41,9 @@ namespace HappyTrees.Services
             return paintingRepository.GetPaintingsOfSeason(season);
         }
 
-        public Painting GetPainting(int id)
+        public Painting GetPainting(int id, IColorService colorService)
         {
-            return paintingRepository.GetPainting(id);
+            return paintingRepository.GetPainting(id, colorService);
         }
 
         public void UpdatePainting(Painting painting)

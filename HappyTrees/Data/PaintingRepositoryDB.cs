@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore;
+using HappyTrees.Services;
 
 namespace HappyTrees.Data
 {
@@ -23,7 +24,7 @@ namespace HappyTrees.Data
             context.SaveChanges();
         }
 
-        public List<Painting> GetAllPaintings()
+        public List<Painting> GetAllPaintings(IColorService colorService)
         {
             return context.Paintings.ToList();
         }
@@ -33,7 +34,7 @@ namespace HappyTrees.Data
             return context.Paintings.Where(p => p.Season == season).ToList();
         }
 
-        public Painting GetPainting(int id)
+        public Painting GetPainting(int id, IColorService colorService)
         {
             Painting painting = context.Paintings.FirstOrDefault(p => p.Id == id);
             painting.Colors = GetColors(painting.Id);

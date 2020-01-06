@@ -28,7 +28,7 @@ namespace HappyTrees.Controllers
         // Show categorized paintings in grid format
         public ActionResult AllPaintings()
         {
-            List<Painting> paintings = paintingService.GetAllPaintings();
+            List<Painting> paintings = paintingService.GetAllPaintings(colorService);
             return View(paintings);
         }
 
@@ -60,7 +60,7 @@ namespace HappyTrees.Controllers
         {
             paintingId = Convert.ToInt32(TempData["id"]);
             TempData["id"] = paintingId;
-            Painting painting = paintingService.GetPainting(paintingId);
+            Painting painting = paintingService.GetPainting(paintingId, colorService);
 
             return View(painting);
         }
@@ -103,7 +103,7 @@ namespace HappyTrees.Controllers
         // GET: Painting/Update
         public ActionResult UpdatePainting(int id)
         {
-            Painting painting = paintingService.GetPainting(id);
+            Painting painting = paintingService.GetPainting(id, colorService);
             List<Color> colors = colorService.GetAllColors();
             bool[] selectedColors = painting.SelectedColors(colors);
 
