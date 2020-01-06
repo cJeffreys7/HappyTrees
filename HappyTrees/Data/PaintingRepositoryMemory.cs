@@ -21,6 +21,36 @@ namespace HappyTrees.Data
             return ConvertLinesToPaintings(File.ReadAllLines(FilePath), 1, File.ReadAllLines(FilePath).Length - 1, colorService);
         }
 
+
+        public List<Painting> GetPaintingsOfSeason(int season, IColorService colorService)
+        {
+            List<Painting> paintings = ConvertLinesToPaintings(File.ReadAllLines(FilePath), 1, File.ReadAllLines(FilePath).Length - 1, colorService);
+            return paintings.Where(p => p.Season == season).ToList();
+        }
+
+        public Painting GetPainting(int id, IColorService colorService)
+        {
+            Painting painting = ConvertLinesToPaintings(File.ReadAllLines(FilePath), id, 1, colorService).FirstOrDefault();
+            return painting;
+        }
+
+        public void UpdatePainting(Painting painting)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeletePainting(int id)
+        {
+            throw new NotImplementedException();
+            //foreach (var painting in paintings)
+            //{
+            //    if(id == painting.Id)
+            //    {
+            //        paintings.Remove(painting);
+            //        return true;
+            //    }
+            //};
+        }
         private List<Painting> ConvertLinesToPaintings(string[] csvLines, int startLine, int totalLines, IColorService colorService)
         {
             csvLines = csvLines.AsSpan(startLine, totalLines).ToArray();
@@ -55,35 +85,6 @@ namespace HappyTrees.Data
             }
 
             return paintings;
-        }
-
-        public List<Painting> GetPaintingsOfSeason(int season)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Painting GetPainting(int id, IColorService colorService)
-        {
-            Painting painting = ConvertLinesToPaintings(File.ReadAllLines(FilePath), id, 1, colorService).FirstOrDefault();
-            return painting;
-        }
-
-        public void UpdatePainting(Painting painting)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DeletePainting(int id)
-        {
-            throw new NotImplementedException();
-            //foreach (var painting in paintings)
-            //{
-            //    if(id == painting.Id)
-            //    {
-            //        paintings.Remove(painting);
-            //        return true;
-            //    }
-            //};
         }
     }
 }

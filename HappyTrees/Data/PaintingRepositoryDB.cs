@@ -29,7 +29,7 @@ namespace HappyTrees.Data
             return context.Paintings.ToList();
         }
 
-        public List<Painting> GetPaintingsOfSeason(int season)
+        public List<Painting> GetPaintingsOfSeason(int season, IColorService colorService)
         {
             return context.Paintings.Where(p => p.Season == season).ToList();
         }

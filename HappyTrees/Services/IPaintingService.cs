@@ -13,7 +13,7 @@ namespace HappyTrees.Services
 
         List<Painting> GetAllPaintings(IColorService colorService);
 
-        List<Painting> GetPaintingsOfSeason(int season);
+        List<Painting> GetPaintingsOfSeason(int season, IColorService colorService);
 
         Painting GetPainting(int id, IColorService colorService);
 

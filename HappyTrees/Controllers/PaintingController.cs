@@ -43,7 +43,7 @@ namespace HappyTrees.Controllers
         {
             totalSeasons = Convert.ToInt32(TempData["totalSeasons"]);
             TempData["totalSeasons"] = totalSeasons;
-            List<Painting> paintings = paintingService.GetPaintingsOfSeason(season);
+            List<Painting> paintings = paintingService.GetPaintingsOfSeason(season, colorService);
             return View(paintings);
         }
 
